@@ -13,16 +13,16 @@ namespace lylib
             glfwTerminate();
             throw WindowCreationException();
         }
+        glfwMakeContextCurrent(window);
         if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
         {
             throw GladLoadException();
         }
-        glfwMakeContextCurrent(window);
         glViewport(0, 0, width, height);
     }
     bool Window::shouldClose()
     {
-        return (glfwWindowShouldClose(this->window) == 0);
+        return (glfwWindowShouldClose(this->window) != 0);
     }
     void Window::updateEssentials()
     {

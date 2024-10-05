@@ -1,4 +1,4 @@
-#include "lylib/exceptions.hpp"
+#include <lylib/exceptions.hpp>
 
 char *GladLoadException::what()
 {
